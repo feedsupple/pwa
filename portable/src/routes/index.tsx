@@ -1,12 +1,13 @@
-import { Parallax } from "@components/block/parallax";
 import { AccountButton } from "@components/kit/account-button";
 import { BackButton } from "@components/kit/back-button";
-import { Menu } from "@components/ui/structure/menu";
+import { CartButton } from "@components/kit/cart-button";
 import { ScrollTopButton } from "@components/kit/scroll-top-button";
 import { ThemeButton } from "@components/kit/theme-button";
 import { Container } from "@components/ui/structure/container";
 import { ContentFrame } from "@components/ui/structure/content-frame";
+import { Menu } from "@components/ui/structure/menu";
 import { Top } from "@components/ui/structure/top";
+import { CartView } from "@components/view/cart-view";
 import { HomeView } from "@components/view/home-view";
 import { ErrorView } from "@components/view/not-found-view";
 import { AuthPage } from "@routes/auth";
@@ -39,6 +40,7 @@ function Layout({
           <Container className={useClasses("menu-block")}>
             <ScrollTopButton />
             <ThemeButton />
+            <CartButton />
             <AccountButton />
           </Container>
         </Menu>
@@ -56,9 +58,10 @@ function Layout({
   </>);
 }
 
-export function HomePage() {
+export function IndexPage() {
   return useRouter(useForwarded(), Layout, {
     "auth": AuthPage,
+    "cart": CartView,
   });
 }
 

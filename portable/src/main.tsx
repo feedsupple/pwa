@@ -1,9 +1,9 @@
 import { render } from 'preact';
 
-import { HomePage } from '@routes/home';
+import { IndexPage } from '@routes/index';
 
 function App() {
-  return <HomePage />;
+  return <IndexPage />;
 }
 
 const appDiv = document.getElementById('app')!;

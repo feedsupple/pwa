@@ -16,23 +16,18 @@ export function ErrorView({
 }: ErrorViewProps) {
   return (
     <Container className={useClasses("error-container")}>
-      <Image
-        src={useAsset("logo.png")}
-        className={useClasses("error-image")}
-      />
-
       <Container className={useClasses("error-content")}>
         <Container className={useClasses("error-meta")}>
+          <Heading size="max" className={useClasses("error-heading")}>
+            Oh no!
+          </Heading>
+
           {code && <Heading
             className={useClasses("error-code")}
             size="large"
           >
             Error {code}
           </Heading>}
-
-          <Heading size="max" className={useClasses("error-heading")}>
-            Oh no!
-          </Heading>
         </Container>
 
         {message && (

@@ -18,8 +18,12 @@
   justify-content: center;
 }
 
+.link-button:not(:has(.link-button-title)),
 .link-button-icon-container:not(:has(.link-button-title)) {
   aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .link-button-title {
@@ -67,6 +71,7 @@
   font-size: 2rem;
   stroke-width: 3;
   color: var(--color-shine);
+  flex-shrink: 0;
 }
 
 .link-button-hover-url {
@@ -77,6 +82,10 @@
   word-break: break-all;
   text-align: center;
   text-wrap-style: balance;
+}
+
+.link-button-hover-url:empty {
+  display: none;
 }
 
 @media (max-width: 800px) {
