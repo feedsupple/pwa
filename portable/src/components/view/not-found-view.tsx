@@ -1,6 +1,4 @@
-import { useAsset } from "@assets";
 import { Container } from "@components/ui/structure/container";
-import { Image } from "@components/ui/structure/image";
 import { Heading } from "@components/ui/text/heading";
 import { Text } from "@components/ui/text/text";
 import { useClasses } from "@styles";

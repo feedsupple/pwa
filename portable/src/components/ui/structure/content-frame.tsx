@@ -1,7 +1,8 @@
+import { ComponentChildren } from "preact";
+
 import { Parallax } from "@components/block/parallax";
 import { Container } from "@components/ui/structure/container";
 import { useClasses } from "@styles";
-import { ComponentChildren } from "preact";
 
 interface ContentFrameProps {
   children: ComponentChildren;

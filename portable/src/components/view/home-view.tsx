@@ -6,8 +6,12 @@ import { useClasses } from "@styles";
 export function HomeView() {
   return (<>
     <Container className={useClasses('home-view')}>
-      <SearchBar />
+      <Container
+        className={useClasses("home-view-header")}
+        children={null}
+      />
 
+      <SearchBar />
       <Container className={useClasses("home-view-content")}>
         <LargeCard />
         <LargeCard />

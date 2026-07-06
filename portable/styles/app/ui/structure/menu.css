@@ -1,7 +1,14 @@
-.menu-container {
-  position: sticky;
-  top: 0;
+.menu-sticky {
+  width: 100%;
   left: 0;
+  top: 0;
+  position: sticky;
+  z-index: 999;
+}
+
+.menu-container {
+  width: 100%;
+  position: absolute;
   z-index: 999;
   pointer-events: none;
 }

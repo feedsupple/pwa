@@ -13,9 +13,11 @@ export function Menu({
   children,
 }: MenuProps) {
   return (<>
-    <Container className={useClasses("menu-container")}>
-      <Container className={useClasses("menu", `menu-${position}`)}>
-        {children}
+    <Container className={useClasses("menu-sticky")}>
+      <Container className={useClasses("menu-container")}>
+        <Container className={useClasses("menu", `menu-${position}`)}>
+          {children}
+        </Container>
       </Container>
     </Container>
   </>);

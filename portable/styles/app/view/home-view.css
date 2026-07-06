@@ -4,6 +4,13 @@
   align-items: stretch;
 }
 
+.home-view-header {
+  display: block;
+  height: 4.75rem;
+  background-color: var(--color-focus);
+  margin-bottom: 1rem;
+}
+
 .home-view-content {
   display: flex;
   flex-direction: column;
@@ -12,4 +19,3 @@
   gap: 1rem;
   padding: 1rem;
 }
-
