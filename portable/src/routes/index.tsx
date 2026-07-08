@@ -6,7 +6,7 @@ import { CartView } from "@components/view/cart-view";
 import { HomeView } from "@components/view/home-view";
 import { ErrorView } from "@components/view/not-found-view";
 import { AuthPage } from "@routes/auth";
-import { ProductPage } from "@routes/projects";
+import { ProductPage } from "@routes/product";
 import { useForwarded } from "@utils/path";
 import { type LayoutProps, useRouter } from "@utils/router";
 
