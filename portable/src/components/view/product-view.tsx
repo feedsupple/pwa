@@ -1,31 +1,44 @@
 import { AttributeTable } from "@components/kit/attribute-table";
+import { CartValue } from "@components/kit/cart-value";
 import { Container } from "@components/ui/structure/container";
 import { Image } from "@components/ui/structure/image";
 import { Heading } from "@components/ui/text/heading";
 import { Text } from "@components/ui/text/text";
 import { useClasses } from "@styles";
 
-interface ProductViewProps {}
+interface ProductViewProps {
+  image: string;
+  name: string;
+  description: string;
 
-export function ProductView({}: ProductViewProps) {
+  attributes: {
+    name: string;
+    value: string;
+  }[];
+}
+
+export function ProductView({
+  image,
+  name,
+  description,
+  attributes,
+}: ProductViewProps) {
   return (
     <Container className={useClasses("product-view")}>
       <Container className={useClasses("product-view-image-container")}>
         <Image
-          src="https://picsum.photos/id/932/720/480"
+          src={image}
           className={useClasses("product-view-image")}
         />
       </Container>
 
       <Container className={useClasses("product-view-content")}>
         <Heading size="medium">
-          Product Name
+          {name}
         </Heading>
 
         <Text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Sed do eiusmod tempor incididunt ut labore et dolore magna
-          aliqua.
+          {description}
         </Text>
       </Container>
 
@@ -37,12 +50,15 @@ export function ProductView({}: ProductViewProps) {
           More Information
         </Heading>
 
-        <AttributeTable attributes={[
-          { name: "Color", value: "Red" },
-          { name: "Size", value: "Medium" },
-          { name: "Material", value: "Cotton" },
-        ]} />
+        <AttributeTable attributes={attributes} />
       </Container>
+
+      <Container
+        className={useClasses("product-view-filler")}
+        children={null}
+      />
+
+      <CartValue qty={2} />
     </Container>
   );
 }

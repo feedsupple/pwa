@@ -4,6 +4,7 @@ import {
   ArrowUpRightRegular,
 } from "@attaditya/iconoir-preact";
 
+import { Button } from "@components/ui/interactive/button";
 import { Link } from "@components/ui/interactive/link";
 import { Container } from "@components/ui/structure/container";
 import { Text } from "@components/ui/text/text";
@@ -15,6 +16,7 @@ interface SocialLinkProps {
   url: string;
   urlText?: string;
   newTab?: boolean;
+  disabled?: boolean;
 }
 
 export function LinkButton({
@@ -23,31 +25,19 @@ export function LinkButton({
   url,
   urlText = url,
   newTab = true,
+  disabled = false,
 }: SocialLinkProps) {
-  const IconComponent = icon ? iconoir[icon] : () => null;
-  const RefIcon = newTab ? ArrowUpRightRegular : ArrowRightRegular;
+  const refIcon = newTab ? "ArrowUpRightRegular" : "ArrowRightRegular";
 
   return (
-    <Link url={url} newTab={newTab}>
-      <Container className={useClasses("link-button")}>
-        <Container className={useClasses("link-button-icon-container")}>
-          <IconComponent className={useClasses("link-button-icon")} />
-
-          {title && (
-            <Text className={useClasses("link-button-title")}>
-              {title}
-            </Text>
-          )}
-        </Container>
-
-        <Container className={useClasses("link-button-hover")}>
-          <Text className={useClasses("link-button-hover-url")}>
-            {urlText}
-          </Text>
-
-          <RefIcon className={useClasses("link-button-hover-icon")} />
-        </Container>
-      </Container>
+    <Link url={url} newTab={newTab} disabled={disabled}>
+      <Button
+        icon={icon}
+        title={title}
+        hoverText={urlText}
+        hoverIcon={refIcon}
+        disabled={disabled}
+      />
     </Link>
   );
 }

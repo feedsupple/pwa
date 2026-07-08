@@ -12,7 +12,23 @@ function Layout({ dynamic }: LayoutProps) {
     </>);
 
   return (<>
-    <ProductView />
+    <ProductView
+      image="https://picsum.photos/id/932/720/480"
+      name="Product Name"
+
+      description={
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        + "Sed do eiusmod tempor incididunt ut labore et dolore magna"
+        + "aliqua."
+      }
+
+      attributes={[
+        { name: "Color", value: "Red" },
+        { name: "Size", value: "Medium" },
+        { name: "Material", value: "Cotton" },
+        { name: "Brand", value: "Brand Name" },
+      ]}
+    />
   </>);
 }
 

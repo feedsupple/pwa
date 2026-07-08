@@ -23,6 +23,7 @@ export function SearchBar() {
         newTab={false}
         url={`/search?q=${query}`}
         icon="SearchRegular"
+        disabled={!query.trim()}
       />
     </Container>
   </>);

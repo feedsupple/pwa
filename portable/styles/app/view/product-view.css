@@ -1,6 +1,8 @@
 .product-view {
+  flex: 1;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
 }
 
 .product-view-image-container {
@@ -32,5 +34,9 @@
 
 .product-view-attributes-heading {
   font-size: 1.5rem !important;
+}
+
+.product-view-filler {
+  flex-grow: 1;
 }
 

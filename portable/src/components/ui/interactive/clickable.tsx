@@ -3,7 +3,7 @@ import { ComponentChildren } from "preact";
 import { useClasses } from "@styles";
 
 interface ClickableProps {
-  onClick: () => void;
+  onClick?: () => void;
   onEventClick?: (event: MouseEvent) => void;
   className?: string;
   children: ComponentChildren;
@@ -19,7 +19,7 @@ export function Clickable({
     className={useClasses("clickable") + " " + className}
 
     onClick={(event) => {
-      onClick();
+      onClick?.();
       onEventClick?.(event);
     }}
   >
