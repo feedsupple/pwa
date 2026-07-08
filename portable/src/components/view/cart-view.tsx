@@ -1,23 +1,46 @@
 import { CartAlt } from "@attaditya/iconoir-preact";
+import { CheckoutItem } from "@components/kit/checkout-item";
+import { Button } from "@components/ui/interactive/button";
+import { LinkButton } from "@components/ui/interactive/link-button";
 import { Container } from "@components/ui/structure/container";
 import { Heading } from "@components/ui/text/heading";
-import { Text } from "@components/ui/text/text";
 import { useClasses } from "@styles";
 
 export function CartView() {
   return (<>
-    <Container className={useClasses('home-view')}>
-      <Heading size="max">
-        <CartAlt />
-      </Heading>
+    <Container className={useClasses('cart-view')}>
+      <Container className={useClasses("cart-view-header")}>
+        <Container className={useClasses("cart-view-header-icon")}>
+          <CartAlt />
+        </Container>
 
-      <Heading size="max">
-        Cart
-      </Heading>
+        <Heading size="max">
+          Your Cart
+        </Heading>
+      </Container>
 
-      <Text>
-        A lightweight, fast, and portable web application framework built with Preact.
-      </Text>
+      <Container className={useClasses("cart-view-content")}>
+        <CheckoutItem />
+        <CheckoutItem />
+        <CheckoutItem />
+        <CheckoutItem />
+        <CheckoutItem />
+      </Container>
+
+      <Container
+        className={useClasses("cart-view-filler")}
+        children={null}
+      />
+
+      <Container className={useClasses("cart-view-footer")}>
+        <LinkButton
+          title="Proceed to Checkout"
+          icon="PiggyBankRegular"
+          url="/checkout"
+          urlText="Checkout Page"
+          newTab={false}
+        />
+      </Container>
     </Container>
   </>);
 }

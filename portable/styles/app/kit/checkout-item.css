@@ -1,0 +1,35 @@
+.checkout-item {
+  display: flex;
+  height: 5rem;
+  gap: 0.5rem;
+}
+
+.checkout-item-image {
+  aspect-ratio: 1 / 1;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.checkout-item-image > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.checkout-item-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 0.5rem;
+}
+
+.checkout-item-name {
+  font-size: 1.25rem !important;
+  font-weight: 600;
+}
+
+.checkout-item-actions {
+  display: flex;
+  align-items: center;
+}
+
