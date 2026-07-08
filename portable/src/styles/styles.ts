@@ -1,6 +1,8 @@
 // AUTO GENERATED FILE - DO NOT EDIT
 
 const classNames = {
+  'attribute': 'attribute',
+  'attributes': 'attributes',
   'auth-options': 'auth-options',
   'auth-view': 'auth-view',
   'button': 'button',
@@ -58,9 +60,8 @@ const classNames = {
   'node-bg-node': 'node-bg-node',
   'parallax': 'parallax',
   'product-view': 'product-view',
-  'product-view-attribute': 'product-view-attribute',
-  'product-view-attributes': 'product-view-attributes',
   'product-view-attributes-container': 'product-view-attributes-container',
+  'product-view-attributes-heading': 'product-view-attributes-heading',
   'product-view-content': 'product-view-content',
   'product-view-image': 'product-view-image',
   'product-view-image-container': 'product-view-image-container',
@@ -73,10 +74,10 @@ const classNames = {
 
 export type ClassName = (keyof typeof classNames);
 export type PossibleClassName = ClassName | false | null | undefined;
-
 export function useClasses(...args: PossibleClassName[]): string {
   const validClass = (arg: PossibleClassName) => !!(arg && arg in classNames);
   const validClasses = args.filter(validClass) as ClassName[];
+
   return validClasses.map(arg => classNames[arg]).join(' ');
 }
 

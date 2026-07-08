@@ -8,7 +8,6 @@ import {
   writeFile,
   readdir,
   copyFile,
-  cp,
   stat,
   watch,
 } from 'node:fs/promises';

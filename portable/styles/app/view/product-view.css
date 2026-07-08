@@ -25,21 +25,12 @@
 
 .product-view-attributes-container {
   padding: 0 1rem;
-}
-
-.product-view-attributes {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  border-top: 0.125rem solid var(--color-focus);
-  border-left: 0.125rem solid var(--color-focus);
-}
-
-.product-view-attribute {
   display: flex;
-  align-items: center;
-  border-collapse: collapse;
-  border-right: 0.125rem solid var(--color-focus);
-  border-bottom: 0.125rem solid var(--color-focus);
-  padding: 0.5rem;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.product-view-attributes-heading {
+  font-size: 1.5rem !important;
 }
 

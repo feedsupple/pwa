@@ -1,3 +1,4 @@
+import { AttributeTable } from "@components/kit/attribute-table";
 import { Container } from "@components/ui/structure/container";
 import { Image } from "@components/ui/structure/image";
 import { Heading } from "@components/ui/text/heading";
@@ -29,15 +30,18 @@ export function ProductView({}: ProductViewProps) {
       </Container>
 
       <Container className={useClasses("product-view-attributes-container")}>
-        <Container className={useClasses("product-view-attributes")}>
-          <Container className={useClasses("product-view-attribute")}>
-            <Text>Color</Text>
-          </Container>
+        <Heading
+          size="small"
+          className={useClasses("product-view-attributes-heading")}
+        >
+          More Information
+        </Heading>
 
-          <Container className={useClasses("product-view-attribute")}>
-            <Text>Red</Text>
-          </Container>
-        </Container>
+        <AttributeTable attributes={[
+          { name: "Color", value: "Red" },
+          { name: "Size", value: "Medium" },
+          { name: "Material", value: "Cotton" },
+        ]} />
       </Container>
     </Container>
   );
