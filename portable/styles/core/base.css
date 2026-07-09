@@ -91,7 +91,7 @@ a {
   background-color: transparent;
 }
 
-::view-transition {
+@view-transition {
   navigation: auto;
 }
 
