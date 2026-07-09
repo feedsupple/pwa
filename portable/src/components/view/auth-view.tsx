@@ -3,7 +3,13 @@ import { Container } from "@components/ui/structure/container";
 import { Heading } from "@components/ui/text/heading";
 import { useClasses } from "@styles";
 
-export function AuthView() {
+interface AuthViewProps {
+  mode?: "in" | "up" | "unknown";
+}
+
+export function AuthView({
+  mode = "unknown",
+}: AuthViewProps) {
   return (
     <Container className={useClasses("auth-view")}>
       <Heading size="medium">
@@ -11,21 +17,33 @@ export function AuthView() {
       </Heading>
 
       <Container className={useClasses("auth-options")}>
-        <LinkButton
-          newTab={false}
-          url="/auth/in"
-          urlText="Sign in to your account"
-          title="I'm an existing user!"
-          icon="PineTreeRegular"
-        />
+        {(mode === "up" || mode === "unknown") && (
+          <LinkButton
+            newTab={false}
+            url="/auth/in"
+            urlText="Sign in to your account"
+            title={
+              mode === "unknown"
+                ? "I'm an existing user!"
+                : "Actually, I'm new here"
+            }
+            icon="PineTreeRegular"
+          />
+        )}
 
-        <LinkButton
-          newTab={false}
-          url="/auth/up"
-          urlText="Create a new account"
-          title="I'm a new user!"
-          icon="FlowerRegular"
-        />
+        {(mode === "in" || mode === "unknown") && (
+          <LinkButton
+            newTab={false}
+            url="/auth/up"
+            urlText="Create a new account"
+            title={
+              mode === "unknown"
+                ? "I'm a new user!"
+                : "Actually, I'm not new"
+            }
+            icon="FlowerRegular"
+          />
+        )}
       </Container>
     </Container>
   );
